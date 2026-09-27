@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CurcuBeer | Pumpkin Ale</title>
+
+<meta name="description"
+content="Conoce CurcuBeer, nuestra cerveza artesanal Pumpkin Ale.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark: #17130f;
+    --cream: #f7f3eb;
+    --orange: #c8792d;
+    --brown: #382719;
+    --gray: #77736d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: #25221e;
+}
+
+/* BARRA SUPERIOR */
+
+header {
+    width: 100%;
+    height: 75px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    background: white;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #a95d20;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #28231f;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: var(--orange);
+}
+
+/* PRODUCTO */
+
+.product {
+    max-width: 1250px;
+    margin: 55px auto;
+    padding: 0 35px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 65px;
+    align-items: start;
+}
+
+/* FOTOGRAFÍA */
+
+.product-image {
+    width: 100%;
+    background: #21170f;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.product-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* INFORMACIÓN */
+
+.product-info {
+    padding-top: 15px;
+}
+
+.category {
+    color: #a66a32;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.product-info h1 {
+    font-family: Georgia, serif;
+    font-size: 43px;
+    font-weight: normal;
+    color: #29221c;
+    line-height: 1.2;
+}
+
+.style {
+    margin-top: 10px;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    color: #a66a32;
+}
+
+.alcohol {
+    margin-top: 22px;
+    font-size: 16px;
+    color: #555;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: #e5e0d8;
+    margin: 25px 0;
+}
+
+.description {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #55514b;
+    text-align: justify;
+}
+
+.description strong {
+    color: #9c5925;
+}
+
+/* BOTÓN */
+
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 27px;
+    background: #a96027;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #79421b;
+}
+
+/* FICHA TÉCNICA */
+
+.technical {
+    max-width: 1250px;
+    margin: 30px auto 80px;
+    padding: 0 35px;
+}
+
+.technical h2 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 30px;
+    color: #30251c;
+}
+
+.specs {
+    border-top: 1px solid #ddd6cc;
+}
+
+.spec {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    padding: 20px 10px;
+    border-bottom: 1px solid #ddd6cc;
+    gap: 20px;
+}
+
+.spec strong {
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #a15e2b;
+}
+
+.spec span {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #514b44;
+}
+
+/* PERFIL SENSORIAL */
+
+.sensory-section {
+    background: #f5f1e9;
+    padding: 75px 8%;
+}
+
+.sensory-section h2 {
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.sensory-intro {
+    text-align: center;
+    color: #777;
+    margin-bottom: 40px;
+    font-size: 14px;
+}
+
+.sensory {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.sensory-card {
+    background: white;
+    padding: 25px;
+    border-top: 3px solid #b66d2b;
+}
+
+.sensory-card h3 {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: normal;
+    color: #9e5b28;
+    margin-bottom: 15px;
+}
+
+.sensory-card p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #625c54;
+}
+
+/* INGREDIENTES */
+
+.ingredients {
+    max-width: 1100px;
+    margin: auto;
+    padding: 75px 30px;
+    text-align: center;
+}
+
+.ingredients h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.ingredients p {
+    max-width: 750px;
+    margin: auto;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #666;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.tag {
+    padding: 10px 20px;
+    border: 1px solid #b77b45;
+    color: #925525;
+    border-radius: 30px;
+    font-size: 13px;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    background: #20170f;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+footer h2 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    letter-spacing: 3px;
+    color: #e3a052;
+}
+
+footer p {
+    color: #c7b9a9;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* CELULARES */
+
+@media (max-width: 800px) {
+    header {
+        height: auto;
+        padding: 20px;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .product {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin: 25px auto 50px;
+        padding: 0 20px;
+    }
+
+    .product-info {
+        padding: 0 5px;
+    }
+
+    .product-info h1 {
+        font-size: 36px;
+    }
+
+    .technical {
+        padding: 0 20px;
+    }
+
+    .spec {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .sensory {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .sensory {
+        grid-template-columns: 1fr;
+    }
+
+    .product-info h1 {
+        font-size: 32px;
+    }
+
+    .sensory-section {
+        padding: 55px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVEGACIÓN -->
+
+<header>
+    <div class="logo">CURCUBEER</div>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#ficha">Ficha técnica</a>
+        <a href="#sensorial">Perfil sensorial</a>
+        <a href="#ingredientes">Ingredientes</a>
+    </nav>
+</header>
+
+
+<!-- PRODUCTO PRINCIPAL -->
+
+<main id="inicio">
+
+    <section class="product">
+
+        <!-- FOTOGRAFÍA DE LAS BOTELLAS -->
+
+        <div class="product-image">
+            <img
+                src="curcubeer.png"
+                alt="Dos botellas de cerveza artesanal CurcuBeer Pumpkin Ale">
+        </div>
+
+        <!-- INFORMACIÓN DEL PRODUCTO -->
+
+        <div class="product-info">
+
+            <div class="category">
+                Cerveza artesanal de temporada
+            </div>
+
+            <h1>CurcuBeer</h1>
+
+            <div class="style">
+                Pumpkin Ale
+            </div>
+
+            <div class="alcohol">
+                6,5 % Alc. Vol. | 330 ml
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="description">
+
+                <p>
+                    Descubre <strong>CurcuBeer</strong>,
+                    una cerveza artesanal de temporada
+                    inspirada en las tradicionales
+                    Pumpkin Ale.
+                </p>
+
+                <br>
+
+                <p>
+                    Su color ámbar cobrizo y su
+                    graduación alcohólica de 6,5 %
+                    forman parte de su identidad.
+                    Con un amargor bajo, ofrece
+                    una propuesta cervecera que
+                    combina tradición y creatividad.
+                </p>
+
+                <br>
+
+                <p>
+                    Una cerveza pensada para quienes
+                    disfrutan explorar nuevos sabores
+                    y descubrir el mundo de la
+                    elaboración artesanal.
+                </p>
+
+            </div>
+
+            <a href="#ficha" class="button">
+                VER FICHA TÉCNICA
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FICHA TÉCNICA -->
+
+    <section class="technical" id="ficha">
+
+        <h2>Ficha técnica</h2>
+
+        <div class="specs">
+
+            <div class="spec">
+                <strong>ESTILO</strong>
+                <span>Pumpkin Ale</span>
+            </div>
+
+            <div class="spec">
+                <strong>ALCOHOL</strong>
+                <span>6,5 % Alc. Vol.</span>
+            </div>
+
+            <div class="spec">
+                <strong>COLOR</strong>
+                <span>Ámbar cobrizo (27 EBC / 14 SRM)</span>
+            </div>
+
+            <div class="spec">
+                <strong>AMARGOR</strong>
+                <span>Bajo</span>
+            </div>
+
+            <div class="spec">
+                <strong>FERMENTACIÓN</strong>
+                <span>Alta (familia Ale)</span>
+            </div>
+
+            <div class="spec">
+                <strong>VOLUMEN</strong>
+                <span>330 ml</span>
+            </div>
+
+            <div class="spec">
+                <strong>TIPO</strong>
+                <span>Cerveza artesanal de temporada</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PERFIL SENSORIAL -->
+
+    <section class="sensory-section" id="sensorial">
+
+        <h2>Perfil sensorial</h2>
+
+        <p class="sensory-intro">
+            Descripción orientativa del estilo Pumpkin Ale.
+            Debe ajustarse mediante una degustación real.
+        </p>
+
+        <div class="sensory">
+
+            <div class="sensory-card">
+                <h3>Apariencia</h3>
+                <p>
+                    Color ámbar cobrizo, con tonalidades
+                    anaranjadas. La espuma puede
+                    presentar un color crema.
+                </p>
+            </div>
+
+            <div class="sensory-card">
+                <h3>Aroma</h3>
+                <p>
+                    Las Pumpkin Ale pueden presentar
+                    aromas maltosos, notas de calabaza
+                    y, dependiendo de la receta,
+                    especias dulces.
+                </p>
+            </div>
+
+            <div class="sensory-card">
+                <h3>Sabor</h3>
+                <p>
+                    Un perfil que puede combinar
+                    notas de malta, caramelo y
+                    calabaza, con un amargor bajo
+                    en el caso de CurcuBeer.
+                </p>
+            </div>
+
+            <div class="sensory-card">
+                <h3>Sensación en boca</h3>
+                <p>
+                    Puede presentar un cuerpo medio
+                    y una sensación cálida asociada
+                    a su graduación alcohólica.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INGREDIENTES -->
+
+    <section class="ingredients" id="ingredientes">
+
+        <h2>Ingredientes</h2>
+
+        <p>
+            Las Pumpkin Ale suelen elaborarse con
+            una base de malta y pueden incorporar
+            calabaza y especias para aportar
+            características particulares.
+        </p>
+
+        <div class="tags">
+            <span class="tag">Agua</span>
+            <span class="tag">Malta</span>
+            <span class="tag">Lúpulo</span>
+            <span class="tag">Levadura</span>
+            <span class="tag">Calabaza</span>
+            <span class="tag">Especias opcionales</span>
+        </div>
+
+        <p style="margin-top: 25px; font-size: 12px;">
+            Ingredientes generales del estilo.
+            La receta exacta de CurcuBeer está
+            pendiente de confirmar.
+        </p>
+
+    </section>
+
+</main>
+
+
+<!-- PIE DE PÁGINA -->
+
+<footer>
+
+    <h2>CURCUBEER</h2>
+
+    <p>PUMPKIN ALE | CERVEZA ARTESANAL</p>
+
+    <p>© 2026 CurcuBeer</p>
+
+</footer>
+
+</body>
+</html>
