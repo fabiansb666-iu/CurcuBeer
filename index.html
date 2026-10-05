@@ -1,435 +1,72 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="description" content="Conoce CurcuBeer Pumpkin Ale, una cerveza artesanal de calabaza y especias, y participa en nuestra encuesta de mercado.">
 <title>CurcuBeer | Pumpkin Ale</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #f2eee5;
-    color: #29251f;
-}
-
-/* BARRA SUPERIOR */
-
-header {
-    background: #1c2b23;
-    height: 85px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 25px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-/* BOTÓN DEL MENÚ */
-
-.menu-button {
-    background: none;
-    border: none;
-    color: #f5e9d0;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-/* NOMBRE DE LA MARCA */
-
-.logo {
-    color: #f7e8c7;
-    border: 2px solid #c58b3a;
-    padding: 10px 18px;
-    font-family: Georgia, serif;
-    font-size: 27px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-decoration: none;
-}
-
-/* ICONO DERECHO */
-
-.header-icon {
-    color: #f5e9d0;
-    font-size: 25px;
-}
-
-/* MENÚ DESPLEGABLE */
-
-.menu {
-    position: fixed;
-    top: 85px;
-    left: -280px;
-    width: 280px;
-    height: calc(100vh - 85px);
-    background: #1c2b23;
-    padding: 30px 20px;
-    transition: left 0.3s ease;
-    z-index: 999;
-}
-
-.menu.active {
-    left: 0;
-}
-
-.menu a {
-    display: block;
-    color: #f5e9d0;
-    text-decoration: none;
-    padding: 18px 10px;
-    font-size: 17px;
-    border-bottom: 1px solid #536052;
-}
-
-.menu a:hover {
-    color: #e8a23c;
-}
-
-/* FONDO OSCURO DEL MENÚ */
-
-.overlay {
-    display: none;
-    position: fixed;
-    inset: 85px 0 0;
-    background: rgba(0,0,0,0.55);
-    z-index: 998;
-}
-
-.overlay.active {
-    display: block;
-}
-
-/* PORTADA */
-
-.hero {
-    background: #a92725;
-    min-height: 550px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 35px 20px;
-}
-
-.hero img {
-    width: 100%;
-    max-width: 900px;
-    height: auto;
-    object-fit: contain;
-    display: block;
-}
-
-/* CONTENIDO */
-
-section {
-    padding: 65px 25px;
-    text-align: center;
-    scroll-margin-top: 85px;
-}
-
-section h2 {
-    font-family: Georgia, serif;
-    font-size: 32px;
-    color: #30432f;
-    margin-bottom: 20px;
-}
-
-section p {
-    max-width: 750px;
-    margin: auto;
-    font-size: 17px;
-    line-height: 1.8;
-}
-
-/* FICHA TÉCNICA */
-
-.ficha {
-    background: #fffaf0;
-}
-
-.datos {
-    max-width: 700px;
-    margin: 30px auto 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-}
-
-.dato {
-    background: #efe1c6;
-    padding: 22px;
-    border-left: 4px solid #c58b3a;
-    border-radius: 5px;
-}
-
-.dato strong {
-    display: block;
-    color: #65451e;
-    margin-bottom: 8px;
-    font-size: 16px;
-}
-
-.dato span {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* INGREDIENTES */
-
-.ingredientes {
-    background: #e8e1d1;
-}
-
-/* PERFIL SENSORIAL */
-
-.sensorial {
-    background: #fffaf0;
-}
-
-/* PIE DE PÁGINA */
-
-footer {
-    background: #1c2b23;
-    color: #f5e9d0;
-    text-align: center;
-    padding: 30px 15px;
-    line-height: 1.8;
-}
-
-footer strong {
-    color: #e8a23c;
-}
-
-/* DISEÑO PARA CELULARES */
-
-@media (max-width: 600px) {
-    header {
-        height: 75px;
-        padding: 0 18px;
-    }
-
-    .logo {
-        font-size: 23px;
-        padding: 8px 12px;
-    }
-
-    .menu {
-        top: 75px;
-        height: calc(100vh - 75px);
-    }
-
-    .overlay {
-        top: 75px;
-    }
-
-    .hero {
-        min-height: 400px;
-        padding: 20px 0;
-    }
-
-    .hero img {
-        width: 100%;
-    }
-
-    section {
-        padding: 50px 20px;
-    }
-
-    section h2 {
-        font-size: 27px;
-    }
-
-    .datos {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
+<style>:root{--forest:#1c2b23;--forest-soft:#30432f;--cream:#f2eee5;--ivory:#fffaf0;--paper:#efe1c6;--gold:#c58b3a;--orange:#e8a23c;--text:#29251f;--glass:rgba(255,250,240,.72);--glass-line:rgba(255,255,255,.86);--shadow:0 16px 40px rgba(35,48,35,.14)}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}body{font-family:Arial,sans-serif;color:var(--text);background:radial-gradient(ellipse at 15% 5%,#fff9e9 0,transparent 30%),radial-gradient(ellipse at 88% 26%,#dce8d7 0,transparent 32%),linear-gradient(145deg,#f7f1e5,#e9eadf 52%,#f3e6cf);background-attachment:fixed;min-height:100vh}header{background:rgba(28,43,35,.90);backdrop-filter:blur(18px) saturate(130%);-webkit-backdrop-filter:blur(18px) saturate(130%);height:85px;display:flex;align-items:center;justify-content:space-between;padding:0 25px;position:sticky;top:0;z-index:1000;border-bottom:1px solid #ffffff55;box-shadow:0 6px 24px #18291e26}.menu-button{position:relative;z-index:1002;display:grid;place-items:center;background:linear-gradient(145deg,#fffaf0,#e7d8b9);border:1px solid #fff;color:var(--forest);font-size:28px;width:48px;height:48px;border-radius:16px;box-shadow:inset 0 1px #fff,0 5px 14px #101b152e;cursor:pointer;pointer-events:auto}.logo{color:#f7e8c7;border:1px solid #e9bd78;padding:10px 18px;border-radius:16px;background:linear-gradient(145deg,#354a3cdd,#18281fdc);box-shadow:inset 0 1px #ffffff66,0 5px 15px #101b1530;font-family:Georgia,serif;font-size:25px;font-weight:800;letter-spacing:.3px;text-decoration:none}.header-icon{font-size:25px;filter:drop-shadow(0 3px 4px #1118)}.pumpkin-button{border:0;background:transparent;cursor:pointer;border-radius:50%;padding:5px;font-size:27px;line-height:1;filter:drop-shadow(0 3px 4px #1118);transition:transform .18s}.pumpkin-button:hover{transform:scale(1.16) rotate(8deg)}.pumpkin-button:focus-visible{outline:3px solid var(--gold);outline-offset:4px}.floating-pumpkin{position:fixed;z-index:2000;pointer-events:none;will-change:transform,opacity;animation:pumpkin-float var(--float-duration,4s) ease-out forwards;filter:drop-shadow(0 4px 5px #25180a55)}@keyframes pumpkin-float{0%{transform:translate(-50%,0) rotate(0deg) scale(.55);opacity:0}12%{opacity:1;transform:translate(-50%,0) rotate(10deg) scale(1)}100%{transform:translate(calc(-50% + var(--float-drift)), -105vh) rotate(var(--float-spin)) scale(.8);opacity:0}}.menu{position:fixed;top:85px;left:-320px;width:min(300px,86vw);height:calc(100vh - 85px);background:rgba(28,43,35,.92);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);padding:25px 20px;transition:left .28s ease;z-index:1001;border-right:1px solid #ffffff55;box-shadow:10px 0 36px #101b1540;border-radius:0 0 24px 0}.menu.active{left:0}.menu a{display:block;color:#f5e9d0;text-decoration:none;padding:16px 13px;font-size:16px;font-weight:600;border-bottom:1px solid #ffffff28;border-radius:12px}.menu a:hover,.menu a:focus{color:#ffcf82;background:#ffffff18;outline:2px solid #e8a23c88}.overlay{display:none;position:fixed;inset:85px 0 0;background:#161e18aa;backdrop-filter:blur(3px);z-index:1000}.overlay.active{display:block}.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 18% 12%,#fff8e8cc,transparent 32%),linear-gradient(135deg,#b8a078,#92704c 52%,#cf9b58);min-height:460px;display:flex;align-items:center;justify-content:center;padding:35px 20px}.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;background:linear-gradient(145deg,#ffffff8a,#ffffff14);border:1px solid #ffffff99;box-shadow:inset -8px -10px 22px #4c39272b,0 12px 32px #39281824;pointer-events:none}.hero:before{width:190px;height:190px;left:8%;top:8%}.hero:after{width:90px;height:90px;right:12%;bottom:11%}.hero img{position:relative;z-index:1;width:100%;max-width:900px;height:auto;object-fit:contain;display:block;filter:drop-shadow(0 20px 22px #23190e44)}section{padding:68px 25px;text-align:center;scroll-margin-top:90px}section h2{font-family:Georgia,serif;font-size:clamp(27px,4vw,36px);color:var(--forest-soft);margin-bottom:18px;letter-spacing:-.3px}section p{max-width:800px;margin:0 auto 16px;font-size:17px;line-height:1.8}.ficha,.sensorial,.encuesta{background:transparent}.view-hidden{display:none!important}.survey-back{margin:8px auto 26px}.ingredientes{background:linear-gradient(135deg,#e5dac2a8,#d9dfd0b5)}.datos{max-width:900px;margin:28px auto 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.dato{background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:22px;border:1px solid var(--glass-line);border-radius:22px;text-align:left;box-shadow:var(--shadow),inset 0 1px #fff}.dato strong{display:block;color:#76501f;margin-bottom:8px;font-size:15px;text-transform:uppercase;letter-spacing:.045em}.dato span{font-size:17px;line-height:1.55}.nota{font-size:14px!important;color:#625c51}.boton{display:inline-block;border:1px solid #ffffffb8;border-radius:15px;background:linear-gradient(145deg,#304b38,#1c2b23);color:#fffaf0;padding:13px 20px;font-size:16px;font-weight:700;cursor:pointer;text-decoration:none;box-shadow:0 8px 20px #273a2b38,inset 0 1px #ffffff66;transition:transform .18s,filter .18s}.boton:hover{filter:brightness(1.1);transform:translateY(-2px)}.form-wrap{max-width:850px;margin:30px auto 0;text-align:left}.form-intro{padding:18px;background:#efe1c6bb;border:1px solid #fff;border-radius:18px;margin-bottom:22px;line-height:1.65;box-shadow:var(--shadow)}.pregunta{padding:18px 20px;margin:13px 0;background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--glass-line);border-radius:18px;box-shadow:0 8px 24px #273a2b20}.pregunta label,.pregunta legend{font-weight:700;line-height:1.5}.pregunta select,.pregunta input[type=text],.pregunta input[type=number],.pregunta textarea{display:block;width:100%;margin-top:10px;padding:12px;border:1px solid #9b8969a8;border-radius:12px;font:inherit;color:var(--text);background:#fffdf7d9;outline:none}.pregunta select:focus,.pregunta input:focus,.pregunta textarea:focus{border-color:#9a6826;box-shadow:0 0 0 3px #c58b3a35}.opciones{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:12px}.opciones label{font-weight:500;display:flex;align-items:flex-start;gap:7px;max-width:100%}.opciones input{margin-top:4px;accent-color:#526743}.pregunta small{display:block;color:#625c51;margin-top:7px;line-height:1.5}.form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.aviso{margin-top:18px;padding:14px;background:#e6eadc;border:1px solid white;border-left:5px solid #748457;border-radius:14px;line-height:1.6;display:none}.aviso.visible{display:block}.contador{font-size:14px!important;color:#625c51;text-align:right;margin:6px 0!important}footer{background:rgba(28,43,35,.94);backdrop-filter:blur(12px);color:#f5e9d0;text-align:center;padding:32px 15px;line-height:1.8;border-top:1px solid #ffffff55}footer strong{color:#e8a23c}footer .nota{color:#e4dccb}@media(max-width:600px){header{height:75px;padding:0 16px}.logo{font-size:21px;padding:9px 13px}.menu{top:75px;height:calc(100vh - 75px)}.overlay{top:75px}.hero{min-height:320px;padding:20px 0}.hero:before{width:120px;height:120px;left:3%}section{padding:50px 17px}section h2{font-size:28px}.datos{grid-template-columns:1fr}.pregunta{padding:16px}.opciones{display:grid;grid-template-columns:1fr}.form-actions .boton{width:100%}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}</style>
 </head>
-
 <body>
-
-<!-- BARRA SUPERIOR -->
-
 <header>
-
-    <button class="menu-button"
-            onclick="toggleMenu()"
-            aria-label="Abrir menú">
-        ☰
-    </button>
-
-    <a href="#inicio" class="logo">CurcuBeer</a>
-
-    <span class="header-icon">🎃</span>
-
+<button class="menu-button" id="menuBtn" onclick="toggleMenu()" aria-label="Abrir menú" aria-expanded="false">☰</button>
+<a href="#inicio" class="logo">CurcuBeer</a><button class="header-icon pumpkin-button" id="pumpkinButton" type="button" aria-label="Hacer flotar calabazas" title="¡Calabazas!">🎃</button>
 </header>
-
-<!-- MENÚ LATERAL -->
-
-<nav class="menu" id="menu">
-
-    <a href="#inicio" onclick="toggleMenu()">Inicio</a>
-
-    <a href="#ficha" onclick="toggleMenu()">Ficha técnica</a>
-
-    <a href="#ingredientes" onclick="toggleMenu()">Ingredientes</a>
-
-    <a href="#sensorial" onclick="toggleMenu()">Perfil sensorial</a>
-
-</nav>
-
-<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
-
-<!-- PORTADA -->
-
-<main>
-
-<section class="hero" id="inicio">
-
-    <img src="curcubeer.png"
-         alt="Botellas de cerveza artesanal CurcuBeer Pumpkin Ale">
-
+<nav class="menu" id="menu" aria-label="Navegación principal">
+<a href="#inicio" onclick="showHome();toggleMenu(false)">Inicio</a><a href="#ficha" onclick="showHome();toggleMenu(false)">Ficha técnica</a><a href="#ingredientes" onclick="showHome();toggleMenu(false)">Ingredientes</a><a href="#sensorial" onclick="showHome();toggleMenu(false)">Perfil sensorial</a><a href="#encuesta" onclick="openSurvey();toggleMenu(false)">Encuesta de mercado</a><a href="#sabores" onclick="openSurvey('sabores');toggleMenu(false)">Sugiere sabores</a>
+</nav><div class="overlay" id="overlay" onclick="toggleMenu(false)"></div>
+<main id="mainContent">
+<section class="hero" id="inicio"><img src="curcubeer.png" alt="Presentación de la cerveza artesanal CurcuBeer Pumpkin Ale" onerror="this.style.display='none'"></section>
+<section class="ficha" id="ficha"><h2>CurcuBeer Pumpkin Ale</h2>
+<p>Una cerveza de temporada inspirada en las tradicionales pumpkin ale: una ale de tonos cálidos que combina notas de calabaza con una mezcla equilibrada de especias. Su base de maltas aporta recuerdos a pan, galleta y caramelo; el lúpulo acompaña con un amargor moderado para dejar espacio al carácter maltoso y especiado. Ideal para quienes disfrutan sabores acogedores, complejos y diferentes.</p>
+<p>La calabaza aporta un matiz suave y terroso, mientras que especias como canela, jengibre, nuez moscada o clavo —frecuentes en este estilo— pueden recordar a un pastel recién horneado. Cada receta interpreta el estilo de forma distinta; el perfil final depende de las cantidades y del proceso de elaboración.</p>
+<div class="datos"><div class="dato"><strong>Estilo</strong><span>Pumpkin Ale</span></div><div class="dato"><strong>Alcohol declarado</strong><span>6,5 %</span></div><div class="dato"><strong>Amargor</strong><span>Bajo</span></div><div class="dato"><strong>Color declarado</strong><span>14 SRM / 27 EBC</span></div></div><p class="nota">Las cifras de alcohol, color y amargor corresponden a los datos suministrados para esta receta.</p>
 </section>
-
-<!-- FICHA TÉCNICA -->
-
-<section class="ficha" id="ficha">
-
-    <h2>Ficha técnica</h2>
-
-    <p>
-        Conoce las características de nuestra cerveza artesanal
-        Pumpkin Ale.
-    </p>
-
-    <div class="datos">
-
-        <div class="dato">
-            <strong>Estilo</strong>
-            <span>Pumpkin Ale</span>
-        </div>
-
-        <div class="dato">
-            <strong>Alcohol</strong>
-            <span>6,5 %</span>
-        </div>
-
-        <div class="dato">
-            <strong>Amargor</strong>
-            <span>Bajo</span>
-        </div>
-
-        <div class="dato">
-            <strong>Color</strong>
-            <span>14 SRM / 27 EBC</span>
-        </div>
-
-    </div>
-
+<section class="ingredientes" id="ingredientes"><h2>Ingredientes</h2><p>La receta combina maltas que construyen una base de cereal y caramelo, lúpulo para balance, levadura ale y una mezcla cálida de calabaza con especias.</p>
+<div class="datos"><div class="dato"><strong>Malta Pale Ale</strong><span>Base maltosa y notas de cereal.</span></div><div class="dato"><strong>Malta Caramel Munich III</strong><span>Profundidad de color y matices dulces a caramelo.</span></div><div class="dato"><strong>Malta Biscuit</strong><span>Notas tostadas y de galleta.</span></div><div class="dato"><strong>Cebada tostada</strong><span>Acentos tostados que pueden sumar complejidad.</span></div><div class="dato"><strong>Malta de trigo</strong><span>Contribuye al cuerpo y a la textura.</span></div><div class="dato"><strong>Lúpulo Perle</strong><span>Aporta amargor y balance herbal/especiado.</span></div><div class="dato"><strong>SafAle S-04</strong><span>Levadura ale inglesa de fermentación alta.</span></div><div class="dato"><strong>Calabaza</strong><span>Ingrediente protagonista que aporta un matiz suave y terroso.</span></div><div class="dato"><strong>Canela</strong><span>Especia cálida con notas dulces y aromáticas.</span></div><div class="dato"><strong>Nuez moscada</strong><span>Aporta un aroma cálido, ligeramente dulce y especiado.</span></div><div class="dato"><strong>Clavo de olor</strong><span>Especia intensa y aromática, usada con moderación para dar profundidad.</span></div></div>
 </section>
-
-<!-- INGREDIENTES -->
-
-<section class="ingredientes" id="ingredientes">
-
-    <h2>Ingredientes</h2>
-
-    <p>
-        Nuestra Pumpkin Ale es una cerveza artesanal de temporada.
-        Aquí podrás conocer los ingredientes utilizados en su
-        elaboración.
-    </p>
-    <div class="datos">
-
-        <div class="dato">
-            <strong>Malta Pale Ale</strong>
-            <span>Malta base</span>
-        </div>
-
-        <div class="dato">
-            <strong>Malta Caramel Munich III</strong>
-            <span>Malta especial</span>
-        </div>
-
-        <div class="dato">
-            <strong>Malta Biscuit</strong>
-            <span>Malta especial</span>
-        </div>
-
-        <div class="dato">
-            <strong>Cebada tostada</strong>
-            <span>Cereal tostado</span>
-        </div>
-
-        <div class="dato">
-            <strong>Malta de trigo</strong>
-            <span>Malta de cereal</span>
-        </div>
-
-        <div class="dato">
-            <strong>Lúpulo Perle</strong>
-            <span>Lúpulo</span>
-        </div>
-
-        <div class="dato">
-            <strong>SafAle S-04</strong>
-            <span>Levadura cervecera</span>
-        </div>
-
-    </div>
-
-
-</section>
-
-<!-- PERFIL SENSORIAL -->
-
-<section class="sensorial" id="sensorial">
-
-    <h2>Perfil sensorial</h2>
-
-    <p>
-        Descubre las características de aroma, sabor, cuerpo y
-        apariencia de nuestra cerveza Pumpkin Ale.
-    </p>
-
-</section>
-
-</main>
-
-<!-- PIE DE PÁGINA -->
-
-<footer>
-
-    <strong>CurcuBeer</strong>
-
-    <p>Cerveza artesanal | Pumpkin Ale</p>
-
-    <p>Una cerveza para disfrutar y compartir.</p>
-
-</footer>
-
-<!-- FUNCIONAMIENTO DEL MENÚ -->
-
+<section class="sensorial" id="sensorial"><h2>Perfil sensorial</h2><div class="datos"><div class="dato"><strong>Aroma</strong><span>Maltoso, con posibles notas de galleta, caramelo y especias cálidas.</span></div><div class="dato"><strong>Sabor</strong><span>Balance entre cereal, dulzor moderado y carácter especiado; la calabaza puede dar un matiz vegetal suave.</span></div><div class="dato"><strong>Cuerpo</strong><span>Medio, con sensación redonda aportada por la combinación de maltas.</span></div><div class="dato"><strong>Apariencia</strong><span>De ámbar a cobriza, según la receta; espuma cremosa.</span></div></div><p class="nota">Descripción orientativa del estilo. El aroma, sabor, cuerpo y apariencia reales deben ajustarse mediante cata de la cerveza terminada.</p></section></main><section class="encuesta view-hidden" id="encuesta" aria-hidden="true"><button class="boton survey-back" type="button" onclick="showHome()">← Volver a CurcuBeer</button><h2>Encuesta de mercado</h2><p>Tu opinión nos ayuda a entender preferencias y a diseñar futuras cervezas. La encuesta es anónima y toma unos minutos. Las preguntas marcadas con <span class="required">*</span> son obligatorias.</p>
+<form class="form-wrap" id="marketSurvey">
+<div class="form-intro"><strong>Uso de respuestas:</strong> esta página estática no envía ni guarda respuestas en un servidor. Al terminar, puedes descargar una copia JSON de tus respuestas para compartirla con el equipo por el canal que este indique.</div>
+<div class="pregunta"><label for="edad">1. ¿En qué rango de edad estás? <span class="required">*</span></label><select id="edad" name="edad" required><option value="">Selecciona</option><option>Menos de 18</option><option>18–24</option><option>25–34</option><option>35–44</option><option>45–54</option><option>55 o más</option><option>Prefiero no decirlo</option></select></div>
+<div class="pregunta"><label for="zona">2. ¿En qué ciudad o región vives? <span class="required">*</span></label><input id="zona" name="zona" type="text" maxlength="80" required></div>
+<div class="pregunta"><label>3. ¿Consumes cerveza? <span class="required">*</span></label><div class="opciones"><label><input type="radio" name="consume" value="Sí" required>Sí</label><label><input type="radio" name="consume" value="No">No</label></div></div>
+<div class="pregunta"><label for="frecuencia">4. ¿Con qué frecuencia consumes cerveza? <span class="required">*</span></label><select id="frecuencia" name="frecuencia" required><option value="">Selecciona</option><option>Varias veces por semana</option><option>Una vez por semana</option><option>2–3 veces al mes</option><option>Una vez al mes</option><option>Menos de una vez al mes</option><option>Nunca</option></select></div>
+<div class="pregunta"><label for="estilos">5. ¿Qué estilos sueles elegir? (elige todos los que correspondan)</label><div class="opciones"><label><input type="checkbox" name="estilos" value="Lager">Lager</label><label><input type="checkbox" name="estilos" value="IPA">IPA</label><label><input type="checkbox" name="estilos" value="Pale Ale">Pale Ale</label><label><input type="checkbox" name="estilos" value="Stout/Porter">Stout/Porter</label><label><input type="checkbox" name="estilos" value="Wheat beer">Wheat beer</label><label><input type="checkbox" name="estilos" value="Ácidas/Sour">Ácidas/Sour</label><label><input type="checkbox" name="estilos" value="Cervezas de temporada">Cervezas de temporada</label><label><input type="checkbox" name="estilos" value="Sin alcohol">Sin alcohol</label><label><input type="checkbox" name="estilos" value="Otro">Otro</label></div></div>
+<div class="pregunta"><label for="compra">6. ¿Dónde compras cerveza con más frecuencia? <span class="required">*</span></label><select id="compra" name="compra" required><option value="">Selecciona</option><option>Supermercado/tienda</option><option>Bar o restaurante</option><option>Tienda especializada</option><option>En línea</option><option>Directamente a cervecerías</option><option>Otro</option></select></div>
+<div class="pregunta"><label for="ocasion">7. ¿En qué ocasión sueles probar una cerveza nueva?</label><select id="ocasion" name="ocasion"><option value="">Selecciona</option><option>Reuniones con amistades</option><option>Comidas</option><option>Eventos o festivales</option><option>En casa</option><option>Cuando encuentro una recomendación</option><option>Otra</option></select></div>
+<div class="pregunta"><label for="interes">8. ¿Qué tanto te interesa probar una Pumpkin Ale? (1 = nada, 5 = mucho) <span class="required">*</span></label><select id="interes" name="interes" required><option value="">Selecciona</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+<div class="pregunta"><label for="conocimiento">9. Antes de esta encuesta, ¿habías oído hablar de las Pumpkin Ale? <span class="required">*</span></label><select id="conocimiento" name="conocimiento" required><option value="">Selecciona</option><option>Sí, y ya las he probado</option><option>Sí, pero no las he probado</option><option>No</option></select></div>
+<div class="pregunta"><label for="calabaza">10. ¿Qué tan atractivo te resulta el sabor de calabaza en una cerveza? <span class="required">*</span></label><select id="calabaza" name="calabaza" required><option value="">Selecciona</option><option>Muy atractivo</option><option>Algo atractivo</option><option>Ni atractivo ni desagradable</option><option>Poco atractivo</option><option>Nada atractivo</option></select></div>
+<div class="pregunta"><label>11. ¿Qué especias te gustaría encontrar? (elige todas las que correspondan)</label><div class="opciones"><label><input type="checkbox" name="especias" value="Canela">Canela</label><label><input type="checkbox" name="especias" value="Jengibre">Jengibre</label><label><input type="checkbox" name="especias" value="Nuez moscada">Nuez moscada</label><label><input type="checkbox" name="especias" value="Clavo">Clavo</label><label><input type="checkbox" name="especias" value="Vainilla">Vainilla</label><label><input type="checkbox" name="especias" value="Cardamomo">Cardamomo</label><label><input type="checkbox" name="especias" value="Sin especias">Sin especias</label><label><input type="checkbox" name="especias" value="Ninguna">Ninguna</label><label><input type="checkbox" name="especias" value="Otra">Otra</label></div></div>
+<div class="pregunta"><label for="dulzor">12. ¿Qué nivel de dulzor prefieres en una cerveza de este tipo?</label><select id="dulzor" name="dulzor"><option value="">Selecciona</option><option>Seca/poco dulce</option><option>Equilibrada</option><option>Un poco dulce</option><option>Notablemente dulce</option></select></div>
+<div class="pregunta"><label for="amargor">13. ¿Qué nivel de amargor prefieres?</label><select id="amargor" name="amargor"><option value="">Selecciona</option><option>Muy bajo</option><option>Bajo</option><option>Medio</option><option>Alto</option><option>Muy alto</option></select></div>
+<div class="pregunta"><label for="alcohol">14. ¿Qué graduación alcohólica prefieres para una cerveza de temporada?</label><select id="alcohol" name="alcohol"><option value="">Selecciona</option><option>Sin alcohol / hasta 0,5 %</option><option>Ligera (0,6–4 %)</option><option>Media (4,1–6 %)</option><option>Fuerte (más de 6 %)</option><option>No tengo preferencia</option></select></div>
+<div class="pregunta"><label for="presentacion">15. ¿Qué formato comprarías con mayor probabilidad?</label><select id="presentacion" name="presentacion"><option value="">Selecciona</option><option>Botella individual</option><option>Lata individual</option><option>Paquete de varias unidades</option><option>Botella grande para compartir</option><option>Vaso servido en bar</option></select></div>
+<div class="pregunta"><label for="precio">16. ¿Cuánto pagarías por una botella o lata individual de cerveza artesanal (aprox. 330–355 ml)?</label><input id="precio" name="precio" type="text" maxlength="50" placeholder="Indica moneda y rango (por ejemplo, COP 8.000–12.000)"><small>La moneda importa: especifica cuál estás usando.</small></div>
+<div class="pregunta"><label for="compraProb">17. Si estuviera disponible en tu zona, ¿qué tan probable sería que la compraras? <span class="required">*</span></label><select id="compraProb" name="compraProb" required><option value="">Selecciona</option><option>Muy probable</option><option>Algo probable</option><option>Ni probable ni improbable</option><option>Poco probable</option><option>Nada probable</option></select></div>
+<div class="pregunta"><label for="atributo">18. ¿Qué factor influye más en tu decisión de comprar cerveza artesanal? <span class="required">*</span></label><select id="atributo" name="atributo" required><option value="">Selecciona</option><option>Sabor</option><option>Precio</option><option>Ingredientes</option><option>Origen/localidad</option><option>Marca y empaque</option><option>Recomendaciones</option><option>Graduación alcohólica</option><option>Disponibilidad</option></select></div>
+<div class="pregunta"><label for="canal">19. ¿Dónde te gustaría encontrar información o novedades de CurcuBeer?</label><select id="canal" name="canal"><option value="">Selecciona</option><option>Instagram/TikTok</option><option>Facebook</option><option>Página web</option><option>Correo electrónico</option><option>En el punto de venta</option><option>Ferias y eventos</option><option>No deseo recibir novedades</option></select></div>
+<div class="pregunta"><label for="maridaje">20. ¿Con qué comida te gustaría acompañar una Pumpkin Ale?</label><input id="maridaje" name="maridaje" type="text" maxlength="120" placeholder="Ej.: quesos, carnes asadas, postres…"></div>
+<div class="pregunta"><label for="expectativa">21. ¿Qué esperarías de una cerveza inspirada en sabores de calabaza?</label><textarea id="expectativa" name="expectativa" rows="3" maxlength="300" placeholder="Cuéntanos brevemente"></textarea></div>
+<div class="pregunta" id="sabores"><label for="saborFuturo">22. ¿Qué sabor o combinación te gustaría que probáramos en futuras cervezas?</label><input id="saborFuturo" name="saborFuturo" type="text" maxlength="120" placeholder="Ej.: maracuyá y lúpulo cítrico"><small>Este espacio recoge propuestas para nuevas recetas. ¡Puedes sugerir frutas, especias, hierbas u otros ingredientes!</small></div>
+<div class="pregunta"><label for="comentario">23. ¿Tienes algún comentario o sugerencia adicional?</label><textarea id="comentario" name="comentario" rows="4" maxlength="500" placeholder="Escribe aquí"></textarea></div>
+<p class="contador" id="contador">0 / 23 respuestas</p><div class="form-actions"><button class="boton" type="submit">Descargar mis respuestas</button><button class="boton" type="reset" style="background:#6e6659">Borrar respuestas</button></div><div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+</form></section>
+<footer><strong>CurcuBeer</strong><p>Cerveza artesanal | Pumpkin Ale</p><p>Una cerveza para disfrutar y compartir.</p><p class="nota">Disfruta responsablemente. Solo para mayores de edad.</p></footer>
 <script>
-
-function toggleMenu() {
-    document.getElementById("menu").classList.toggle("active");
-    document.getElementById("overlay").classList.toggle("active");
-}
-
+function showHome(){const main=document.getElementById('mainContent');const survey=document.getElementById('encuesta');main.classList.remove('view-hidden');survey.classList.add('view-hidden');survey.setAttribute('aria-hidden','true');window.scrollTo({top:0,behavior:'smooth'});}
+function openSurvey(anchor){const main=document.getElementById('mainContent');const survey=document.getElementById('encuesta');main.classList.add('view-hidden');survey.classList.remove('view-hidden');survey.setAttribute('aria-hidden','false');if(anchor){setTimeout(()=>document.getElementById(anchor).scrollIntoView({behavior:'smooth',block:'center'}),80)}else{window.scrollTo({top:0,behavior:'smooth'});}}
+function toggleMenu(force){const menu=document.getElementById('menu');const overlay=document.getElementById('overlay');const button=document.getElementById('menuBtn');const shouldOpen=typeof force==='boolean'?force:!menu.classList.contains('active');menu.classList.toggle('active',shouldOpen);overlay.classList.toggle('active',shouldOpen);button.setAttribute('aria-expanded',String(shouldOpen));button.setAttribute('aria-label',shouldOpen?'Cerrar menú':'Abrir menú');}
+document.getElementById('pumpkinButton').addEventListener('click',scatterPumpkins);
+function scatterPumpkins(){const button=document.getElementById('pumpkinButton');const rect=button.getBoundingClientRect();const count=12;for(let i=0;i<count;i++){const pumpkin=document.createElement('span');pumpkin.className='floating-pumpkin';pumpkin.setAttribute('aria-hidden','true');pumpkin.textContent='🎃';pumpkin.style.left=(rect.left+rect.width/2+(Math.random()-.5)*100)+'px';pumpkin.style.top=(rect.top+rect.height/2+Math.random()*30)+'px';pumpkin.style.fontSize=(24+Math.random()*30)+'px';pumpkin.style.setProperty('--float-drift',((Math.random()-.5)*260)+'px');pumpkin.style.setProperty('--float-spin',((Math.random()-.5)*100)+'deg');const duration=3+Math.random()*2;pumpkin.style.setProperty('--float-duration',duration+'s');document.body.appendChild(pumpkin);setTimeout(()=>pumpkin.remove(),duration*1000+100)}}
+const form=document.getElementById('marketSurvey');const counter=document.getElementById('contador');const notice=document.getElementById('aviso');
+function countAnswers(){let n=0;for(const el of form.elements){if(!el.name)continue;if((el.type==='checkbox'||el.type==='radio')&&!el.checked)continue;if(el.type==='checkbox'||el.type==='radio'){if(el.checked)n++;continue;}if(el.value.trim())n++;}counter.textContent=`${n} / 23 respuestas`;}
+form.addEventListener('input',countAnswers);form.addEventListener('change',countAnswers);form.addEventListener('reset',()=>setTimeout(()=>{countAnswers();notice.classList.remove('visible');},0));
+form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const data={fecha:new Date().toISOString(),respuestas:{}};for(const [key,value] of new FormData(form)){if(data.respuestas[key]===undefined)data.respuestas[key]=value;else if(Array.isArray(data.respuestas[key]))data.respuestas[key].push(value);else data.respuestas[key]=[data.respuestas[key],value];}const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const link=document.createElement('a');link.href=URL.createObjectURL(blob);link.download='respuestas-encuesta-curcubeer.json';link.click();URL.revokeObjectURL(link.href);notice.textContent='Se descargó una copia de tus respuestas. Esta página no las transmite: comparte el archivo únicamente con el equipo organizador por su canal oficial.';notice.classList.add('visible');});
 </script>
-
 </body>
 </html>
+
